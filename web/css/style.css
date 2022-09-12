@@ -2403,7 +2403,6 @@ table th {
 }
 
 
-body {
-    background: rgb(34, 40, 49);
-    background: linear-gradient(90deg, rgba(34, 40, 49, 1) 0%, rgba(34, 40, 49, 1) 45%, rgba(0, 0, 0, 1) 100%);
+.page-content {
+    background-image: linear-gradient(to right, #222831, #232933, #242b34, #262c36, #272e38, #262d37, #262d36, #252c35, #222931, #1f252d, #1d2229, #1a1f25) !important;
 }
