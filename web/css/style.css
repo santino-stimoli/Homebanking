@@ -2404,7 +2404,6 @@ table th {
 
 
 body {
-    background-image: url(../../resources/Fondos/Shiny-Overlay-4.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background: rgb(34, 40, 49);
+    background: linear-gradient(90deg, rgba(34, 40, 49, 1) 0%, rgba(34, 40, 49, 1) 45%, rgba(0, 0, 0, 1) 100%);
 }
