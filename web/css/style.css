@@ -704,7 +704,7 @@ h5 {
 
 @media (max-width: 545px) {
     .logo-home-texto {
-        margin-bottom: 5rem;
+        margin: 5rem 0 !important;
     }
 }
 
