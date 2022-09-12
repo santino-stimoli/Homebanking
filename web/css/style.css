@@ -73,6 +73,7 @@ html {
     display: flex;
     justify-content: center;
     min-width: 600px;
+    display: none;
 }
 
 ::selection {
@@ -2399,4 +2400,10 @@ table th {
     table td:last-child {
         border-bottom: 0;
     }
+}
+
+body {
+    background-image: url(../../resources/Fondos/Shiny-Overlay-4.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
