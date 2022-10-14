@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pegasus Bank</title>
+    <link rel="icon" href="../resources/logo/logo-claro.png">
+
+    <!-- E X T R A S  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- F O N T S -->
+    <script src="https://kit.fontawesome.com/db55518b9d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- C S S -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="hidden">
+
+    <!-- F O N D O -->
+
+    <!-- O N L O A D -->
+    <div id="onload">
+        <img src="./resources/logo/logo-claro.png" alt="">
+        <div id="container">
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <p>Cargando:</p>
+        </div>
+    </div>
+
+    <div class="section" id="app">
+        <div class="card-3d-wrap">
+            <div class="register section text-center">
+                <form class="center-wrap" @submit.prevent="createClient">
+                    <h4>Crear Cliente</h4>
+                    <div class="d-flex flex-row nombre-apellido">
+                        <div class="form-group">
+                            <input v-model="register.name" required type="text" name="regName" class="form-style"
+                                placeholder="Nombre" id="regName" autocomplete="off">
+                            <i class="input-icon fa-solid fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input v-model="register.lastName" required type="text" name="regLastName"
+                                class="form-style" placeholder="Apellido" id="regLastName" autocomplete="off">
+                            <i class="input-icon fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input v-model="register.email" required type="email" name="regEmail" class="form-style"
+                            placeholder="Mail" id="regEmail" autocomplete="off">
+                        <i class="input-icon fa-solid fa-at"></i>
+                    </div>
+                    <div class="genero-fecha d-flex flex-row justify-content-around align-items-center">
+
+                        <div class="w-g">
+                            <select v-model="register.sex" name="regSex" id="sex">
+                                <option class="d-none" value="">Sexo</option>
+                                <optgroup label="Sexo">
+                                    <option name="regSex" value="MALE">Masculino</option>
+                                    <option name="regSex" value="FEMALE">Femenino</option>
+                                    <option name="regSex" value="NONE">Ninguno</option>
+                                </optgroup>
+                            </select>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-center w-g">
+                            <span class="position-absolute">Nacimiento</span>
+                            <input v-model="register.age" type="date">
+                            <i class="fa-solid fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input v-model="register.password" required type="text" name="regPassword"
+                            class="form-style regPassword" placeholder="Contraseña" id="regPassword" autocomplete="off">
+                        <i class="input-icon fa-solid fa-key"></i>
+                    </div>
+                    <div class="form-group">
+                        <input v-model="register.passwordConfirm" required type="text" name="passwordConfirm"
+                            class="form-style regPassword" placeholder="Confirmar contraseña" id="passwordConfirm"
+                            autocomplete="off"><i class="input-icon fa-solid fa-key"></i>
+                    </div>
+                    <button type="submit" class="btn2">Registrarme</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="responstable table2">
+
+                <thead>
+                    <th>Id</th>
+                    <th>Nombre completo</th>
+                    <th>Mail</th>
+                    <th>Sexo</th>
+                    <th>Edad</th>
+                </thead>
+
+                <tbody>
+                    <tr v-for="client in clients">
+                        <td>{{client.id}}</td>
+                        <td>{{client.name}} {{client.lastName}}</td>
+                        <td>{{client.email}}</td>
+                        <td>{{client.sex}}</td>
+                        <td>{{client.age}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/main.js"></script>
+    </div>
+
+</body>
+
+</html>
